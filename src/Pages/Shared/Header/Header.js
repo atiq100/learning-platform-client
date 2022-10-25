@@ -36,50 +36,34 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
-            </li>
-            <li tabIndex={0}>
-              <a className="justify-between">
-                Parent
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                </svg>
-              </a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            <Link to='/'>Home</Link>
+          </li>
+          <li>
+            <Link to='/courses'>Courses</Link>
+          </li>
+          <li>
+            <Link to='/blog'>Blog</Link>
+          </li>
+          <li>
+            <Link to='/faq'>FAQ</Link>
+          </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Learner Edge</a>
+        <Link className="btn btn-ghost normal-case text-xl">Learner Edge</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
-            <a>Home</a>
+            <Link to='/'>Home</Link>
           </li>
           <li>
-            <a>Courses</a>
+            <Link to='/courses'>Courses</Link>
           </li>
           <li>
-            <a>Blog</a>
+            <Link to='/blog'>Blog</Link>
           </li>
           <li>
-            <a>FAQ</a>
+            <Link to='/faq'>FAQ</Link>
           </li>
         </ul>
       </div>

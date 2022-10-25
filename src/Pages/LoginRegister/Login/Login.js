@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaGoogle, FaGithub,  } from "react-icons/fa";
@@ -6,9 +7,11 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
     const [error,setError] = useState('')
-    const {signIn} = useContext(AuthContext);
+    const {signIn,providerLogin} = useContext(AuthContext);
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
+
+    const googleProvider = new GoogleAuthProvider()
 
     const from = location.state?.from?.pathname || '/';
 
@@ -30,14 +33,26 @@ const Login = () => {
                toast.error ("Your email is not varified.please verify your email")
             }
             
-                
-            
             
         })
         .catch(error =>{
              console.error(error)
              setError(error.message)
             })
+    }
+    const handleGoogleSignIn=()=>{
+        providerLogin(googleProvider)
+        .then(result =>{
+            const user = result.user
+            if(user.emailVerified){
+                navigate(from,{replace: true})
+            }
+            else{
+               toast.error ("Your email is not varified.please verify your email")
+            }
+        })
+        .catch(error => console.log(error))
+
     }
     return (
         <div>
@@ -72,7 +87,7 @@ const Login = () => {
         <p>{error}</p>
         <div className="divider">OR Login With</div>
         <div className='flex justify-center text-xl'>
-            <FaGoogle className='mr-2'></FaGoogle>
+            <FaGoogle onClick={handleGoogleSignIn} className='mr-2'></FaGoogle>
             <FaGithub></FaGithub>
         </div>
       </form>
