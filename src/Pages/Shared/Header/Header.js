@@ -84,13 +84,13 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end mr-12">
-        <div className="avatar online mr-1">
-          <div className="w-14 rounded-full">
+        <div className="avatar  mr-1">
+          <div className="w-14 rounded-full ">
             {
                 user?.photoURL ?
                 <img src={user?.photoURL} title={user?.displayName} />
                 :
-                <FaUser></FaUser>
+                <FaUser className="text-3xl m-auto mt-2"></FaUser>
             }
             
           </div>
