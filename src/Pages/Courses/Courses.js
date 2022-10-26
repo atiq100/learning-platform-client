@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const Courses = ({course}) => {
     const {id,name,image}=course
     return (
-        <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+    
+            <div className="card w-80 bg-base-100 shadow-xl ">
   <figure><img src={image} alt={name} /></figure>
   <div className="card-body">
     <h2 className="card-title">{name}</h2>
@@ -16,7 +16,7 @@ const Courses = ({course}) => {
     </div>
   </div>
 </div>
-        </div>
+        
     );
 };
 

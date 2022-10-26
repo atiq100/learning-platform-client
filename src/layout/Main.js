@@ -9,12 +9,12 @@ const Main = () => {
   return (
     <div>
       <Header className='mb-6'></Header>
-      <div className="mx-12">
-        <div className="flex">
-          <div className="flex-none w-1/4 ">
+      <div className="md:mx-12 mx-6 ">
+        <div className="md:flex block">
+          <div className="flex-none w-full md:w-1/4 ">
             <LeftSideNav></LeftSideNav>
           </div>
-          <div className="grow w-3/4 ">
+          <div className="grow w-full md:w-3/4 ">
             <Outlet></Outlet>
           </div>
         </div>

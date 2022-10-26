@@ -5,7 +5,7 @@ import Courses from '../../Courses/Courses';
 const CourseSummary = () => {
     const allCourses = useLoaderData()
     return (
-        <div className='mt-6 flex'>
+        <div className='mt-6 grid md:grid-cols-2 gap-2 '>
             
             {
                 allCourses.map(course => <Courses

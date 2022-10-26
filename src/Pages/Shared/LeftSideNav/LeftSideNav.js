@@ -12,7 +12,7 @@ const LeftSideNav = () => {
         .then(data => setCourses(data))
     },[])
     return (
-        <div className='mt-6'>
+        <div className='mt-6 '>
             {
                 courses.map(course => <p key ={course.id} className='text-primary text-lg'>
                     <Link to={`/course/${course.id}`}>{course.name}</Link>

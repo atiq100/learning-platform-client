@@ -12,7 +12,7 @@ const Header = () => {
     .catch(error=>console.log(error))
   }
   return (
-    <div className="navbar bg-base-100   shadow-md">
+    <div className="navbar bg-base-100   shadow-md ">
       <div className="navbar-start ml-12">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -47,7 +47,30 @@ const Header = () => {
           <li>
             <Link to='/faq'>FAQ</Link>
           </li>
+          <div className="avatar  mr-1">
+          <div className="w-14 rounded-full ">
+            {
+                user?.photoURL ?
+                <img src={user?.photoURL} title={user?.displayName} />
+                :
+                <FaUser className="text-3xl m-auto mt-2"></FaUser>
+            }
+            
+          </div>
+        </div>
+        {
+            user?.uid ?
+             
+             <Link onClick ={handleLogout} className="btn btn-accent">Logout</Link>
+        
+           :
+           <>
+           <Link to='/login' className="text-lg font-bold text-center">Login</Link>
+           <Link to='/register' className="btn btn-primary ml-1">Register</Link>
+           </>
+        }
           </ul>
+          
         </div>
         <Link className="btn btn-ghost normal-case text-xl">Learner Edge</Link>
       </div>
@@ -67,7 +90,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end mr-12">
+      <div className="navbar-end mr-12 hidden md:flex">
         <div className="avatar  mr-1">
           <div className="w-14 rounded-full ">
             {
