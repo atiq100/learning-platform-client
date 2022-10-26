@@ -8,13 +8,13 @@ import LeftSideNav from "../Pages/Shared/LeftSideNav/LeftSideNav";
 const Main = () => {
   return (
     <div>
-      <Header></Header>
+      <Header className='mb-6'></Header>
       <div className="mx-12">
         <div className="flex">
-          <div className="flex-none w-16">
+          <div className="flex-none w-1/4 ">
             <LeftSideNav></LeftSideNav>
           </div>
-          <div className="grow w-80 ">
+          <div className="grow w-3/4 ">
             <Outlet></Outlet>
           </div>
         </div>
