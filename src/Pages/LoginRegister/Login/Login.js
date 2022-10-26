@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FaGoogle, FaGithub,  } from "react-icons/fa";
@@ -12,6 +12,7 @@ const Login = () => {
     const location = useLocation();
 
     const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
 
     const from = location.state?.from?.pathname || '/';
 
@@ -44,16 +45,26 @@ const Login = () => {
         providerLogin(googleProvider)
         .then(result =>{
             const user = result.user
-            if(user.emailVerified){
-                navigate(from,{replace: true})
-            }
-            else{
-               toast.error ("Your email is not varified.please verify your email")
-            }
+           
+           navigate(from,{replace: true})
+            
+           
         })
         .catch(error => console.log(error))
 
     }
+    const handleGithubSignIn=()=>{
+      providerLogin(githubProvider)
+      .then(result =>{
+          const user = result.user
+          
+          navigate(from,{replace: true})
+          
+          
+      })
+      .catch(error => console.log(error))
+
+  }
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -88,7 +99,7 @@ const Login = () => {
         <div className="divider">OR Login With</div>
         <div className='flex justify-center text-xl'>
             <FaGoogle onClick={handleGoogleSignIn} className='mr-2'></FaGoogle>
-            <FaGithub></FaGithub>
+            <FaGithub onClick={handleGithubSignIn}></FaGithub>
         </div>
       </form>
     </div>
