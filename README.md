@@ -68,3 +68,33 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Project Name
+# Learner Edge
+## Description
+This website provides facility to enroll meaching learning course.
+## Funtionality
+- use firebase authentication (Google,Github,Email/Password)
+- user can see the courses
+- without login user can not access premium content.
+- use light/dark mode.
+- User can download pdf content.
+## Implementation Technology
+- HTML
+- Tailwind CSS
+- Javascript
+- React
+- for server site use express
+## Third Party Library
+- daisy ui
+- React Hot Toast
+- React Icon
+- react to pdf
+## Tools
+- Vs Code
+- firebase
+- vercel
+
+
+ ## Live website Link
+ learner-edge.web.app
