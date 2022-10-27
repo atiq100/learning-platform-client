@@ -25,17 +25,17 @@ export const routes = createBrowserRouter([
             {
                 path:'/courses',
                 element:<CourseSummary></CourseSummary>,
-                loader: ()=> fetch('http://localhost:5000/allcourses')
+                loader: ()=> fetch('https://b610-lerning-platform-server-side-atiq100.vercel.app/allcourses')
             },
             {
                 path:'/course/:id',
                 element: <Course></Course>,
-                loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-atiq100.vercel.app/courses/${params.id}`)
             },
             {
                 path:'/checkout/:id',
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-atiq100.vercel.app/courses/${params.id}`)
             },
             {
                 path:'/blog',
