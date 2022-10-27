@@ -72,7 +72,7 @@ const Header = () => {
           </ul>
           
         </div>
-        <Link className="btn btn-ghost normal-case text-xl">Learner Edge</Link>
+        <Link to='/' className="btn btn-ghost normal-case text-xl">Learner Edge</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
@@ -113,6 +113,7 @@ const Header = () => {
            <Link to='/register' className="btn btn-primary ml-1">Register</Link>
            </>
         }
+        <input type="checkbox" className="toggle ml-1"  />
        
       </div>
     </div>
