@@ -23,7 +23,7 @@ export const routes = createBrowserRouter([
                 element:<Home></Home>
             },
             {
-                path:'/courses',
+                path:'/allcourses',
                 element:<CourseSummary></CourseSummary>,
                 loader: ()=> fetch('https://b610-lerning-platform-server-side-atiq100.vercel.app/allcourses')
             },
