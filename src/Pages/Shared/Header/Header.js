@@ -113,7 +113,7 @@ const Header = () => {
            <Link to='/register' className="btn btn-primary ml-1">Register</Link>
            </>
         }
-        <input type="checkbox" className="toggle ml-1"  />
+        <input type="checkbox" className="toggle ml-1 "  />
        
       </div>
     </div>
