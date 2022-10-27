@@ -8,7 +8,7 @@ const Course = () => {
   return (
     <div>
         <h2 className="text-xl font-semibold mt-6">Course Details</h2>
-        <div className="card w-3/4 bg-base-100 shadow-xl mt-4">
+        <div className="card w-full md:w-3/4 bg-base-100 shadow-xl mt-4">
       <figure>
         <img src={image} alt={name} />
       </figure>
@@ -21,8 +21,8 @@ const Course = () => {
             <p className="flex items-center gap-2"><span><FaClock></FaClock></span> <span> {duration}</span></p>
         </div>
         <div className="card-actions justify-end">
-          <Link to={`/courses/${id}`} className="btn btn-primary">
-            See details
+          <Link to={`/checkout/${id}`} className="btn btn-primary">
+            Get premium access
           </Link>
         </div>
       </div>
