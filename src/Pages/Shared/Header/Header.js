@@ -1,9 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { useEffect } from "react";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
+
+
 const Header = () => {
+  const [theme,setTheme]=useState('light')
+ 
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
     const {user,logout} = useContext(AuthContext)
 
   const handleLogout = ()=>{
@@ -109,11 +117,11 @@ const Header = () => {
         
            :
            <>
-           <Link to='/login' className="text-lg font-bold">Login</Link>
+           <Link to='/login' className="text-lg ">Login</Link>
            <Link to='/register' className="btn btn-primary ml-1">Register</Link>
            </>
         }
-        <input type="checkbox" className="toggle ml-1 "  />
+        <span className="ml-1">{theme}</span><input onClick={handleThemeSwitch} type="checkbox" className="toggle ml-1 "  />
        
       </div>
     </div>
